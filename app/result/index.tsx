@@ -15,7 +15,7 @@ export default function Page(){
     },
   ]
   return <View style={styles.container}>
-    <Box alignItems="center">
+    <Box>
     <FlatList data={icons} renderItem={({
       item
     }) => <VStack py="2" flex={1} space={2} my={3} mx={2} boxSize="76">

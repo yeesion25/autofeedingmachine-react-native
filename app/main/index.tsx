@@ -16,15 +16,18 @@ export default function Page() {
   });
   const icons = [
     {
-      icon1: <ChevronLeftIcon />,
+      icon1: <ChevronLeftIcon/>,
       iconName: "이전"
     },
     {
-      icon2: <ChevronRightIcon />,
+      icon2: <ChevronRightIcon/>,
       iconName: "다음"
     },
   ];
-  return <Box alignItems="center">
+    if(''){
+      
+    }
+  return <Box>
     <FlatList data={icons} renderItem={({
       item
     }) => <VStack py="2" flex={1} space={2} my={3} mx={10} boxSize="76" alignItems="center">
@@ -32,9 +35,10 @@ export default function Page() {
           textAlign: "center"
         }}>
           <Button onPress={() => router.push('/')} size="lg" width="50" backgroundColor='white'>{item.icon1}</Button>
-          <Button onPress={() => router.push('/result')} size="lg" id="R" width="50" backgroundColor='white' >{item.icon2}</Button>
+          <Button onPress={() => router.push('/result')} size="lg" width="50" backgroundColor='white' >{item.icon2}</Button>
         </Box>
-      </VStack>} keyExtractor={item => item.iconName} numColumns={cols} />
+      </VStack>
+    } keyExtractor={item => item.iconName} numColumns={cols} />
     <ScrollView showsVerticalScrollIndicator={false} px="3">
       <VStack w="100%" space={4} px="2" mt="4" alignItems="center" justifyContent="center">
         <View style={styles.main}>
@@ -46,21 +50,27 @@ export default function Page() {
             base: "auto",
             md: "0"
           }}>
-            <Button id="#dog" onPress={() => router.push('/dog')} size="lg" variant="ghost" >
+            <Button id="dog" onPress={() => router.push('/dog')} size="lg" variant="ghost" >
               강아지
             </Button>
-
-            <Button id="#cat" onPress={() => router.push('/cat')} size="lg" variant="ghost" >
+          
+            <Button id="cat" onPress={() => router.push('/cat')} size="lg" variant="ghost" >
               고양이
             </Button>
+            
+            <Button id="parrot" onPress={() => 
+              router.push('/parrot')
 
-            <Button id="#parrot" onPress={() => router.push('/parrot')} size="lg" variant="ghost" >
+               } size="lg" variant="ghost" >
               앵무새
             </Button>
-
+          
           </Stack>
+          
           <Text style={styles.t}>체중 입력</Text>
-          <Input id="#kg" maxLength={3} value={value} w="100%" onChangeText={handleChange} placeholder="현재 반려동물의 체중을 입력해주세요.(단위 : kg)" />
+          <Input id="kg" maxLength={3} value={value} w="100%" onChangeText={handleChange} placeholder="현재 반려동물의 체중을 입력해주세요.(단위 : kg)" 
+          
+          />
           
           <Text style={styles.t}>원하는 사료 배급 시간 입력</Text>
 
@@ -77,7 +87,7 @@ export default function Page() {
                   <Select.Item label="오후" value="pm" />
                 </Select>
               </Box>
-
+                
               <Input maxLength={2} style={{ width: 50 }} />시
               <Input maxLength={2} style={{ width: 50 }} />분
             </View>

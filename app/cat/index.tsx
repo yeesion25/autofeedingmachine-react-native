@@ -16,8 +16,8 @@ export default function Page(){
       iconName: "이전"
     },
   ]
-  return <View style={styles.container}>
-    <Box alignItems="center">
+      return <View style={styles.gray}>
+    <Box>
     <FlatList data={icons} renderItem={({
       item
     }) => <VStack py="2" flex={1} space={2} my={3} mx={2} boxSize="76">
@@ -28,6 +28,7 @@ export default function Page(){
             </Box>
           </VStack>} keyExtractor={item => item.iconName} numColumns={cols} />
     </Box>
+    <View style={styles.container}>
     <Text style={styles.t}>하나를 선택해 주세요</Text>
     <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={value} onChange={nextValue => {
     setValue(nextValue);
@@ -57,22 +58,26 @@ export default function Page(){
         비만묘
       </Radio>
     </Radio.Group>
-    <Box alignItems="center">
+      </View>
+    <Box alignItems="center" marginBottom="20">
     <Button onPress={() => router.push('/main')} size="lg" marginTop="50" backgroundColor='#9E9E9E'>완료</Button>
     </Box>
   </View>
 }
 const styles = StyleSheet.create({
-    container:{
-      flex:1,
-      textAlign: "center",
-      alignItems: "center",
+    gray:{
       backgroundColor: "#DADADA",
-      justifyContent: "center"
+      flex:1,
     },
     t:{
       fontSize: 25,
       paddingBottom: 50,
       fontWeight: "500"
+    },
+    container:{
+      flex:1,
+      textAlign: "center",
+      alignItems: "center",
+      backgroundColor: "#DADADA",
     }
   })
