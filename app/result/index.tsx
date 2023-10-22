@@ -26,7 +26,7 @@ export default function Page(){
             </Box>
           </VStack>} keyExtractor={item => item.iconName} numColumns={cols} />
     </Box>
-    <Text style={styles.fp}>적정 체중은?</Text>
+    <Text style={styles.fp}>정상 체중은?</Text>
       fetch(
         
       )
